@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+div#container{
+    display: grid;
+    grid-template-areas:
+    "top top"
+    "left right"
+    "bottom bottom";
+    grid-template-columns:1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    gap:2rem;
+}
+
+header{
+    grid-area:top;
+    background-color: olive;
+    color: white
+}
+
+main{
+    grid-area:right;
+}
+
+nav{
+    grid-area:left;
+    background-color: beige;
+}
+
+footer{
+    grid-area: bottom;
+    background-color: olive;
+    color: white;
+}
+
+@media screen and (max-width:600px){
+    div#container{
+        grid-template-areas: 
+        "top"
+        "right"
+        "left"
+        "bottom";
+        /*display:block;*/
+        grid-template-columns: 1fr;
+    }
+}
